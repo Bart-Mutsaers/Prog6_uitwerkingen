@@ -1,0 +1,42 @@
+﻿<Window x:Class="MyBlogStarter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="clr-namespace:MyBlogStarter.ViewModels"
+        Title="BlogApp" Height="350" Width="525"
+    
+        DataContext="{Binding Path=Main,Source={StaticResource ServiceLocator}}" >
+        <!-- De datacontext komt van de service locator -->
+    
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/background.png"/>
+        </Grid.Background>
+        <TextBox Text="{Binding Path=SelectedBlog.Title, Mode=TwoWay}" HorizontalAlignment="Left" Margin="116,10,0,0" VerticalAlignment="Top"
+               Width="292" FontFamily="Snap ITC" FontSize="20" Background="#FFFFFDFD" Opacity="{Binding Path=Ovalue}"/>
+        <Label Content="{Binding Path=SelectedBlog.Author}" HorizontalAlignment="Left" Margin="116,230,0,0" VerticalAlignment="Top" 
+               Width="137"/>
+        <Label Content="{Binding Path=SelectedBlog.TimeStamp}" HorizontalAlignment="Left" Height="26" Margin="253,230,0,0" 
+               VerticalAlignment="Top" Width="155" HorizontalContentAlignment="Right"/>
+
+        <TextBox  Text="{Binding Path=SelectedBlog.Content, Mode=TwoWay}" HorizontalAlignment="Left" Margin="116,66,0,0" TextWrapping="Wrap"
+                   VerticalAlignment="Top" Width="292" Height="159" FontFamily="MV Boli" FontSize="16" Background="#FFFFFDFD" Opacity="{Binding Path=Ovalue}" 
+                  />
+        
+        <Button Content="New" Command="{Binding ClearBlogCommand}" HorizontalAlignment="Left"  Height="32" Margin="113,278,0,0" VerticalAlignment="Top" Width="57"/>
+        <Button Content="Save" Command="{Binding AddBlogCommand}" HorizontalAlignment="Left" Margin="175,278,0,0" VerticalAlignment="Top" Width="57" Height="32"/>
+        <Button Content="Delete" Command="{Binding DelBlogCommand}" HorizontalAlignment="Left" Margin="237,278,0,0" VerticalAlignment="Top" Width="57" Height="32"/>
+        <Button Content="Next"  Command="{Binding NextBlogCommand}" HorizontalAlignment="Left" Height="31" Margin="363,278,0,0" 
+                VerticalAlignment="Top" Width="57"/>
+        <Button Content="Previous" Command="{Binding PrevBlogCommand}" HorizontalAlignment="Left" Height="31" Margin="299,278,0,0" 
+                VerticalAlignment="Top" Width="59"/>
+        <Label Content="selected id" Margin="10,252,439,0" 
+               VerticalAlignment="Top" Background="White" Height="29" FontWeight="Bold"/>
+        <Label Content="{Binding Path=SelectedBlog.Id}" HorizontalAlignment="Left" Margin="30,280,0,0" 
+               VerticalAlignment="Top" Height="29" RenderTransformOrigin="0.344,1.828" Background="White" Width="32" FontWeight="Bold"/>
+        <TextBox Text="{Binding Path=BlogTotal, Mode=OneWay}" Margin="458,278,10,0" VerticalAlignment="Top" TextAlignment="center"
+                 Height="36" RenderTransformOrigin="0.344,1.828" FontSize="20" Background="#FFEE00C2" FontWeight="Bold" BorderBrush="{x:Null}" Foreground="White" IsReadOnly="True"/>
+        <Label Content="totaal" HorizontalAlignment="Left" Margin="458,252,0,0" VerticalAlignment="Top" Width="49"/>
+
+
+    </Grid>
+</Window>
