@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3ba887aa-f987-43cb-82fe-34b051c943fe" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50318/LMService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LMService.wsdl" MetadataType="Wsdl" ID="ce7e09fa-2f8f-482c-b49a-809ee2334a68" SourceId="1" SourceUrl="http://localhost:50318/LMService.svc?wsdl" />
+    <MetadataFile FileName="LMService.disco" MetadataType="Disco" ID="b7ae3dfd-d110-47ba-a59b-6a40447baedc" SourceId="1" SourceUrl="http://localhost:50318/LMService.svc?disco" />
+    <MetadataFile FileName="LMService.xsd" MetadataType="Schema" ID="914d233c-dcab-423e-9597-cf4cbc60855b" SourceId="1" SourceUrl="http://localhost:50318/LMService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LMService1.xsd" MetadataType="Schema" ID="d6a2b09e-dad7-4e2c-a611-e398c3451ba9" SourceId="1" SourceUrl="http://localhost:50318/LMService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LMService2.xsd" MetadataType="Schema" ID="22a3d6ef-bc51-4822-8a91-e0f529e06df4" SourceId="1" SourceUrl="http://localhost:50318/LMService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

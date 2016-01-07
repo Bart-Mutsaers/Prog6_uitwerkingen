@@ -1,0 +1,74 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.banner{
+    padding:0px;
+    padding-right:50px;
+}
+
+.banner .bannereImg{
+    width: 100%;
+}
+
+.options{
+    position:absolute;
+    top:0px;
+    right:0px;
+    padding:10px;
+    font-size:30px;
+    color:black;
+}
+
+.options a {
+
+
+    position:absolute;
+}
+
+.productSelect {
+      max-width:100% !important;
+    width:100% !important;
+    height:400px !important;
+}
+.productSelect option{
+    width: 100%;
+}
+
+
+.employee{
+    overflow:hidden;
+    position:relative;
+    height:120px;
+}
+
+.employee h2{
+    margin-top:0px;
+     z-index: 2;
+}
+
+.employee img{
+    height: 160px;
+    position:absolute;
+    right:-10PX;
+    top:-20px;
+    border-radius: 50% 0px 0px 50%;
+}
+
+.navLinks a {
+    float:right;
+}

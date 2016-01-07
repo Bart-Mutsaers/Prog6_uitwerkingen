@@ -1,0 +1,28 @@
+﻿<mui:ModernDialog x:Class="LeagueManager.WPF.WinnerDialog"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                  xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+                  xmlns:vm="clr-namespace:LeagueManager.WPF.ViewModel"
+                  mc:Ignorable="d" d:DesignWidth="300"
+                  Title="Winner dialog" Height="142">
+
+    <Window.Resources>
+        <vm:ViewModelLocator x:Key="Locator" />
+    </Window.Resources>
+
+    <Window.DataContext>
+        <Binding Path="Main" Source="{StaticResource Locator}"/>
+    </Window.DataContext>
+
+
+    <!-- Note: ModernDialog buttons are defined in the constructor of the code behind class -->
+
+    <Grid>
+        <TextBlock Text="And the winner is... " Margin="0,27,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="292" TextAlignment="Center" ></TextBlock>
+        <TextBlock Text="{Binding Winner}" Margin="86,48,75,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Segoe UI Black" FontWeight="Bold" FontSize="24"></TextBlock>
+    </Grid>
+
+
+</mui:ModernDialog>

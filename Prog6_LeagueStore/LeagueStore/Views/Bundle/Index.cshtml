@@ -1,0 +1,62 @@
+﻿@model IEnumerable<LeagueStore.Models.Bundle>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="container">
+
+
+    <div class="box">
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="box banner">
+           
+            <div class="row">
+                <div class="col-md-7">
+                    @if(item.BannerUrl != null) { 
+                        <img class="bannereImg"  src='@Url.Content(item.BannerUrl)' />
+                    }
+                    else
+                    {
+                        <img class="bannereImg" src='@Url.Content("~/Content/Img/default.jpg")' />
+                    }
+                </div>
+                <div class="col-md-5">
+
+                    <h3>@item.Name</h3>
+                   
+                    @Html.DisplayFor(modelItem => item.Description)<br /><br />
+                    @Html.DisplayFor(modelItem => item.RiotPoints) Riot points
+                    <br /><br /><br />
+
+                    <h4>Producs in this bundle</h4>
+                     
+                    @foreach (var product in item.Products)
+                    {
+                        <img src="@product.ItemUrl" />
+                    }
+
+
+                    <span class="options">
+                        <a href="bundle/edit?bundleId=@item.Id">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </a> 
+                    </span>
+
+                   
+                </div>
+            </div>
+          
+            
+           
+
+</div>
+    }
+</div>

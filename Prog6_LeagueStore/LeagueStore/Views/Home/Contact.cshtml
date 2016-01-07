@@ -1,0 +1,20 @@
+﻿@model IEnumerable<LeagueStore.Models.Employee>
+
+
+<div class="container">
+    <div class="row">
+        @foreach (var employee in Model)
+        {
+            <div class="col-md-6">
+                <div class="box employee">
+
+                    <img  src="../@employee.ImageUrl">
+                    <h2>@employee.Name</h2>
+                    <h4>@employee.Role</h4>
+            </div>
+        </div>
+
+
+        }
+    </div>
+</div>

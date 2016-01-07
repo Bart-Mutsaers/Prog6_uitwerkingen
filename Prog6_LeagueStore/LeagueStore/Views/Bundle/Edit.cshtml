@@ -1,0 +1,102 @@
+﻿@model LeagueStore.Models.ViewModels.BundleVM
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div class="container">
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="box banner">
+
+            <div class="row">
+                <div class="col-md-7">
+                    @if (Model.Bundle.BannerUrl != null)
+                    {
+                        <img class="bannereImg" src='@Url.Content(Model.Bundle.BannerUrl)' />
+                    }
+                    else
+                    {
+                        <img class="bannereImg" src='@Url.Content("~/Content/Img/default.jpg")' />
+                    }
+                </div>
+                <div class="col-md-5">
+
+                    <h3>Product details</h3>
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.Bundle.Id)
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Bundle.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Bundle.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Bundle.Name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Bundle.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Bundle.Description, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Bundle.Description, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Bundle.RiotPoints, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Bundle.RiotPoints, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Bundle.RiotPoints, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Bundle.BannerUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Bundle.BannerUrl, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Bundle.BannerUrl, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="box">
+
+            <h4>Producs in this bundle</h4>
+
+            <select multiple="multiple" name="ProductIds" class="productSelect">
+                @foreach (var product in Model.Products)
+                {
+                    if (Model.Bundle.Products.Contains(product))
+                    {
+                        <option selected="selected" value="@product.Id">@product.Name</option>
+                    }
+                    else
+                    {
+                        <option value="@product.Id">@product.Name</option>
+                    }
+
+                }
+            </select>
+
+        </div>
+
+        <div class="box navLinks">
+
+            <input type="submit" value="Save" class="btn btn-default" />
+            @Html.ActionLink("Back to List", "Index")
+        
+  
+        </div>
+    }
+
+    <div>  
+    </div>
+</div>
